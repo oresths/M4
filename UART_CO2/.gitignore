@@ -1,0 +1,9 @@
+/Release
+/Debug
+/EALib
+/mbed-dsp
+/mbed-rtos
+/mbed-src
+/USBDevice
+/UART_CO2 Debug.launch
+/UART_CO2 Release.launch
