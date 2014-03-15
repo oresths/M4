@@ -5,8 +5,8 @@
 //input the circular buffer size (buf). It would be a good idea for the buffer
 //size to be a multiple of the incoming packet size. Haven't tested for packets
 //bigger than 64 byte.
-//The circular buffer fills up with a callback, so we don't have to worry
-//missing packets.
+//The circular buffer fills up with a callback transparently, so we don't have
+//to worry about missing packets.
 USBSerial serial(40);
 
 Serial pc(USBTX, USBRX);

@@ -56,7 +56,7 @@ public:
     * @param connect_blocking define if the connection must be blocked if USB not plugged in
     *
     */
-    USBSerial(uint16_t vendor_id = 0x1f00, uint16_t product_id = 0x2012, uint16_t product_release = 0x0001, bool connect_blocking = true): USBCDC(vendor_id, product_id, product_release, connect_blocking), buf(128){
+    USBSerial(uint8_t bufLength, uint16_t vendor_id = 0x1f00, uint16_t product_id = 0x2012, uint16_t product_release = 0x0001, bool connect_blocking = true): USBCDC(vendor_id, product_id, product_release, connect_blocking), buf(bufLength){
         settingsChangedCallback = 0;
     };
 
