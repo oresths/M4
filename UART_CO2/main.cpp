@@ -82,6 +82,12 @@ void CO2Init() {
 }
 
 void CO2Trigger() {
+	/**
+	 * @brief Live Data Simple request to CO2 sensor
+	 * We use the fact that uC UART FIFO is 16 bytes long and we send this 7 byte message
+	 * periodically after a long period of time (from UART's point of view) to achieve
+	 * maximum performance without using DMA or interrupts.
+	 */
 	uint8_t co2TransmitBuffer[7] = { DLE, RD, Var_ID, DLE, EOFF, Checksum_hi,
 	Checksum_lo };
 
