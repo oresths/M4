@@ -158,4 +158,6 @@ private:
     void (*settingsChangedCallback)(int baud, int bits, int parity, int stop);
 };
 
+#elif defined USBSERIAL_H
+#error "Original USBserial.h compiled, that is not good"
 #endif
