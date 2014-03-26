@@ -70,7 +70,7 @@ int main() {
 
 void RX_isr() {
 	uint8_t CO2recv = co2uart.getcNB();	//Reading UnRBR clears the interrupt. If we don't clear it
-										//->the ISR would retrigger infinetely.
+										//->the ISR would retrigger infinitely.
 	CO2queue.put((uint8_t *)CO2recv);
 	led2=!led2;
 }
