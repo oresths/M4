@@ -5,9 +5,9 @@
 
 #define PIXELS_COUNT 64
 
-#define GREEN 0x01
-#define RED 0x02
-#define ORANGE 0x03
+#define GREEN 0x1C
+#define RED 0xE0
+#define ORANGE 0xFC
 
 char ledArray [64];
 int celsius;
@@ -17,7 +17,7 @@ DigitalOut ss(p8);	///Slave Select
 
 Serial pc(USBTX, USBRX);
 
-I2C i2c0(p32, p31);	//sda, scl
+I2C i2c0(p9, p10);	//sda, scl
 
 uint8_t i2c_addr_GND = 0b1101000 << 1;	//mbed accepts the oversimplified wrong address type
 

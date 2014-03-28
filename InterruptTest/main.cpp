@@ -8,8 +8,6 @@ DigitalOut led3(LED3);
 
 Serial pc(USBTX, USBRX);
 
-//InterruptIn ooo(p3);
-
 Queue<int, 20> queue;
 
 //Things to note: 1) Interrupts must be enabled in NVIC too, 2) NVIC_SetPriority() is optional, default priority is 0
@@ -29,7 +27,7 @@ void waitingTask(void const *args) {
 	}
 }
 
-//If queue.put() is executed in ISR, and we have continuous interrupts, not allowing any other task to run,
+//If queue.put() is executed in ISR, and we have continuous interrupts (not allowing any task to run),
 //->queue uses a size 16 FIFO. Shouldn't happen in a real case scenario.
 //Things to note: 1) extern "C" is required, 2) Interrupt flag should be clear or we will enter the ISR continuously,
 //-> 3) an ISR can't be interrupted by the same interrupt that caused it, only by a higher priority one.
