@@ -1,4 +1,6 @@
 #include "mbed.h"
+#include "rtos.h"
+#include "cmsis_os.h"
 
 #define I2C_THERM_ADDR 0x0E	///Thermistor Register Starting Address
 #define I2C_TEMP_ADDR 0x80	///Temperature Registers Starting Address
@@ -21,12 +23,19 @@ I2C i2c0(p9, p10);	//sda, scl
 
 uint8_t i2c_addr_GND = 0b1101000 << 1;	//mbed accepts the oversimplified wrong address type
 
+osMessageQDef(I2C1_queue, 1, uint32_t);
+osMessageQId  I2C1_queue;
+//extern osMessageQId  I2C1_queue;
+
 int main() {
+	I2C1_queue = osMessageCreate(osMessageQ(I2C1_queue), NULL);
+
 	ss = 1;	//Make sure the RG matrix is deactivated
 	RGB_LEDArray.format(8,0);
 	RGB_LEDArray.frequency(125000);
 
 	i2c0.frequency(400000);
+	NVIC_EnableIRQ(I2C1_IRQn);
 
 	char cmd[2];
 
