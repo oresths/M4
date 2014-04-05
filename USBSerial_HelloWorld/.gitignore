@@ -1,5 +1,3 @@
-/mbed-src
-/USBDevice
 /USBSerial_HelloWorld Debug.launch
 /USBSerial_HelloWorld Release.launch
 /Debug
