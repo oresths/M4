@@ -11,7 +11,7 @@ Serial pc(USBTX, USBRX);
 Queue<int, 20> queue;
 
 //Things to note: 1) Interrupts must be enabled in NVIC too, 2) NVIC_SetPriority() is optional, default priority is 0
-//->(highest), 3) if we want to choose the ISR during runtime dynamic vectors must be used (MBED has NVIC_SetVector()
+//->(highest), 3) if we want to choose the ISR during runtime, dynamic vectors must be used (MBED has NVIC_SetVector()
 //->implemented for this task)
 void IO_IE() {
 	LPC_GPIOINT->IO2IntEnR |= 1 << _P2_10;
@@ -27,10 +27,11 @@ void waitingTask(void const *args) {
 	}
 }
 
-//If queue.put() is executed in ISR, and we have continuous interrupts (not allowing any task to run),
-//->queue uses a size 16 FIFO. Shouldn't happen in a real case scenario.
-//Things to note: 1) extern "C" is required, 2) Interrupt flag should be clear or we will enter the ISR continuously,
-//-> 3) an ISR can't be interrupted by the same interrupt that caused it, only by a higher priority one.
+//If queue.put() is executed inside an ISR, and we have continuous interrupts (not allowing non-ISR code to run),
+//->queue uses a size 16 FIFO (independent from what the user sets). Shouldn't happen in a real case scenario.
+//Things to note: 1) extern "C" is required if handler executed in C++ code, 2) Interrupt flag should be cleared
+//-> or we will enter the ISR continuously, 3) an ISR can't be interrupted by the same interrupt that caused it,
+//->only by a higher priority one.
 extern "C" void GPIO_IRQHandler(){
 	int num = rand();
 	queue.put((int *)num);
