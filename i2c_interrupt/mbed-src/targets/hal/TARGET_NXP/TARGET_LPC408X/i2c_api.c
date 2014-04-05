@@ -18,7 +18,7 @@
 #include "pinmap.h"
 #include "error.h"
 
-#include "i2c_nonblocking2.h"
+#include "i2c_nonblocking.h"
 
 static const PinMap PinMap_I2C_SDA[] = {
     {P0_0 , I2C_1, 3},

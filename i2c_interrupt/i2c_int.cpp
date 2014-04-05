@@ -11,6 +11,10 @@
 #define RED 0xE0
 #define ORANGE 0xFC
 
+#define I2C_IRQN I2C0_IRQn
+#define I2C_QUEUE I2C0_queue
+#define I2C_OBJECT i2c0
+
 char ledArray [64];
 int celsius;
 
@@ -19,23 +23,23 @@ DigitalOut ss(p8);	///Slave Select
 
 Serial pc(USBTX, USBRX);
 
-I2C i2c0(p9, p10);	//sda, scl
+I2C I2C_OBJECT(p9, p10);	//sda, scl
 
 uint8_t i2c_addr_GND = 0b1101000 << 1;	//mbed accepts the oversimplified wrong address type
 
-osMessageQDef(I2C1_queue, 1, uint32_t);
-osMessageQId  I2C1_queue;
+osMessageQDef(I2C_QUEUE, 1, uint32_t);
+osMessageQId  I2C_QUEUE;
 //extern osMessageQId  I2C1_queue;
 
 int main() {
-	I2C1_queue = osMessageCreate(osMessageQ(I2C1_queue), NULL);
-
-	ss = 1;	//Make sure the RG matrix is deactivated
+	ss = 1;	//Make sure the RG matrix is deactivated, maybe this should be first line executed
 	RGB_LEDArray.format(8,0);
 	RGB_LEDArray.frequency(125000);
 
-	i2c0.frequency(400000);
-	NVIC_EnableIRQ(I2C1_IRQn);
+	I2C_QUEUE = osMessageCreate(osMessageQ(I2C_QUEUE), NULL);
+
+	I2C_OBJECT.frequency(400000);
+	NVIC_EnableIRQ(I2C_IRQN);
 
 	char cmd[2];
 
@@ -57,8 +61,8 @@ int main() {
 		pc.printf("GridEye\r\n");
 
 		cmd[0] = I2C_THERM_ADDR;
-		i2c0.write(i2c_addr_GND, cmd, 1, 1);
-		i2c0.read(i2c_addr_GND, thermistor_echo, 2);
+		I2C_OBJECT.write(i2c_addr_GND, cmd, 1, 1);
+		I2C_OBJECT.read(i2c_addr_GND, thermistor_echo, 2);
 
 		if (therm_echo_uint16 & 0x800) {  //if negative
 			thermistor_value = - 0.0625 * (0x7FF & therm_echo_uint16);
@@ -69,8 +73,8 @@ int main() {
 		pc.printf("Termistor Temp = %f\r\n", thermistor_value);
 
 		cmd[0] = I2C_TEMP_ADDR;
-		i2c0.write(i2c_addr_GND, cmd, 1, 1);
-		i2c0.read(i2c_addr_GND, temp_echo, 2*PIXELS_COUNT);
+		I2C_OBJECT.write(i2c_addr_GND, cmd, 1, 1);
+		I2C_OBJECT.read(i2c_addr_GND, temp_echo, 2*PIXELS_COUNT);
 
 		for (int i = 0; i < PIXELS_COUNT; ++i) {
 			if (temp_echo_uint16[i] & 0x800) {  //if negative

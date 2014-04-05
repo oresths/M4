@@ -1,10 +1,3 @@
-/*
- * i2c_nonblocking2.h
- *
- *  Created on: Mar 29, 2014
- *      Author: menas
- */
-
 #ifndef I2C_NONBLOCKING2_H_
 #define I2C_NONBLOCKING2_H_
 
@@ -64,6 +57,7 @@ void I2C1_IRQHandler(){
 static inline void i2c_clear_SI(i2c_t *obj) {
 //    i2c_conclr(obj, 0, 0, 1, 0);
 	obj->i2c->CONCLR = 1 << SI;
+	NVIC_ClearPendingIRQ(I2C1_IRQn);
 	NVIC_EnableIRQ(I2C1_IRQn);
 }
 
@@ -82,17 +76,6 @@ static int i2c_wait_SI(i2c_t *obj) {
 //	}
     return 0;
 }
-
-
-/*void waitingTask(void const *args) {
-	pcc.printf("wait\r\n");
-	while (1) {
-//		osEvent evt = queue.get();
-//		pcc.printf("Task : %d\r\n",evt.value.v);
-		led3=!led3;
-	}
-}*/
-
 
 
 #endif /* I2C_NONBLOCKING2_H_ */
