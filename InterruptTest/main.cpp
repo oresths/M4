@@ -12,7 +12,8 @@ Queue<int, 20> queue;
 
 //Things to note: 1) Interrupts must be enabled in NVIC too, 2) NVIC_SetPriority() is optional, default priority is 0
 //->(highest), 3) if we want to choose the ISR during runtime, dynamic vectors must be used (MBED has NVIC_SetVector()
-//->implemented for this task)
+//->implemented for this task), 4) interrupt priority registers for interrupts 32-40 don't appear to LPCExpresso's
+//-> Peripheral+ view, but they exist if we check the memory manually
 void IO_IE() {
 	LPC_GPIOINT->IO2IntEnR |= 1 << _P2_10;
 	NVIC_EnableIRQ(GPIO_IRQn);
@@ -39,13 +40,18 @@ extern "C" void GPIO_IRQHandler(){
 	led2=!led2;
 }
 
+//Returns time. RTOS SysTick timer, 1ms accuracy.
+//To be able to call the function in main() we must not include rt_Time.h and write the prototype and use extern "C"
+extern "C" U32  rt_time_get (void);
+
 int main (void) {
     Thread thread(waitingTask);
 	led2 = 1;
 	led3 = 0;
 	IO_IE();
 	wait(0.1);
-	pc.printf("kseki\r\n");
+	uint32_t time = rt_time_get();
+	pc.printf("kseki %d\r\n", time);
 
     while (true) {
 

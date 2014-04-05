@@ -3,7 +3,8 @@
 
 //Things to note: 1) Interrupts must be enabled in NVIC too (I2C is enabled only in NVIC), 2) NVIC_SetPriority() is
 //-> optional, default priority is 0 (highest), 3) if we want to choose the ISR during runtime, dynamic vectors must
-//-> be used (MBED has NVIC_SetVector() implemented for this task)
+//-> be used (MBED has NVIC_SetVector() implemented for this task), 4) interrupt priority registers for interrupts 32-40 don't appear to LPCExpresso's
+//-> Peripheral+ view, but they exist if we check the memory manually
 
 #ifndef I2C_NONBLOCKING_H_
 #define I2C_NONBLOCKING_H_
