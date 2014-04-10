@@ -13,7 +13,7 @@ char ledArray [64];
 int celsius;
 
 SPI RGB_LEDArray(p5, p6, p7); /// mosi, miso, sclk
-DigitalOut ss(p8);	///Slave Select
+DigitalOut SPI_ss(p8);	///Slave Select
 
 Serial pc(USBTX, USBRX);
 
@@ -22,7 +22,7 @@ I2C i2c0(p9, p10);	//sda, scl
 uint8_t i2c_addr_GND = 0b1101000 << 1;	//mbed accepts the oversimplified wrong address type
 
 int main() {
-	ss = 1;	//Make sure the RG matrix is deactivated
+	SPI_ss = 1;	//Make sure the RG matrix is deactivated
 	RGB_LEDArray.format(8,0);
 	RGB_LEDArray.frequency(125000);
 
@@ -86,7 +86,7 @@ int main() {
 		}
 
 		//Transfer LED Data
-		ss = 0;
+		SPI_ss = 0;
 		wait_us(500);
 		RGB_LEDArray.write(0x26);	//Resets RGBMatrixBackpack index. (see sparkfun's github). It shouldn't be needed
 									//-> but it doesn't work without it...
@@ -94,7 +94,7 @@ int main() {
 			RGB_LEDArray.write(ledArray[pixel]);
 		}
 		wait_us(500);
-		ss = 1;
+		SPI_ss = 1;
 
 		wait(1);
 	}

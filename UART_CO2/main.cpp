@@ -25,7 +25,7 @@ DigitalOut led3(LED3);
 
 /**
  * CO2 sensor buffer.
- * @note buffer_size=19 in case we have 4 byte stuffings.
+ * @note buffer_size=19 (worst case scenario with 4 byte stuffings)
  * @note Without the buffer, we would have to process data in the time between 2 consecutive
  * incoming bytes.
  */
