@@ -17,6 +17,10 @@
 #define SI 3
 
 #define I2C_IRQN I2C0_IRQn
+
+//In order to have minimal impact to mbed library i2c_wait_SI() must be a function that starts and terminates every time
+//-> it is called so it can't be a thread always running. We prefer the queue because is not tied to a particular thread,
+//->unlike signals.
 #define I2C_QUEUE I2C0_queue
 
 extern osMessageQId  I2C_QUEUE;
