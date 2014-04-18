@@ -2,9 +2,12 @@
 #include "rtos.h"
 #include "grideye.hpp"
 #include "CO2.hpp"
+#include "USB.hpp"
 //#include "gpdma.h"
 //#include "dsp.h"
 //#include "USBSerial2.h"
+
+USBSerial usb(21);
 
 int main (void) {
 	Thread tCO2(CO2Task);
@@ -33,8 +36,13 @@ int main (void) {
     temp_sens3.i2c_addr = 0xD8;
     Thread tGridEYERightI2C1(GridEYETask, (void *)&temp_sens3);
 
+//    Thread tUSB(USBTask);
 
     while (true) {
+		if (usb.readable()) {
+			int command = usb._getc();
+			int uu=command-1;
+		}
     	tGridEYECenterI2C0.signal_set(GRIDEYE_I2C_SIGNAL);
 
 		Thread::wait(12);
