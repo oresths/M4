@@ -1,4 +1,5 @@
 
+
 #ifndef USB_HPP_
 #define USB_HPP_
 
@@ -17,4 +18,4 @@
 
 void USBTask(const void *args);
 
-#endif /* USB_HPP_ */
+#endif  /* USB_HPP_ */

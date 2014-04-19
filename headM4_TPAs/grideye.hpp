@@ -20,7 +20,7 @@
 #define GRIDEYE_I2C_TEMP_ADDR 0x2	///TPA temperature Registers Starting Address
 
 #define GRIDEYE_I2C_ADDR_GND 0b1101000 << 1	//mbed accepts the oversimplified wrong address type TODO DEBUG: check if works OK
-#define GRIDEYE_I2C_ADDR_VDD 0b1101001 << 1	//mbed accepts the oversimplified wrong address type TODO DEBUG: check if works OK
+#define GRIDEYE_I2C_ADDR_VDD 0b1101001 << 1	//mbed acccepts the oversimplified wrong address type TODO DEBUG: check if works OK
 
 #define GEYE_CENTER 1
 #define GEYE_LEFT 2

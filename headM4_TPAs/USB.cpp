@@ -18,6 +18,10 @@ void USBTask(const void *args) {
 	};
 	uint8_t command;
 
+	uint8_t *temp;
+	uint8_t temp3;
+	uint8_t temp2[8];
+
 	while (true) {
 		Thread::wait(COMMAND_POLLING_TIME);
 		if (usb.readable()) {
@@ -25,13 +29,19 @@ void USBTask(const void *args) {
 
 			switch (command) {
 				case GEYE_CENTER_REQUEST:
-					usb.writeBlock(GridEYEvaluesGet(GEYE_CENTER), 64);
+					temp=GridEYEvaluesGet(GEYE_CENTER);
+					usb.writeBlock(temp, PIXELS_COUNT);
 					break;
 				case GEYE_LEFT_REQUEST:
-					usb.writeBlock(GridEYEvaluesGet(GEYE_LEFT), 64);
+					usb.writeBlock(GridEYEvaluesGet(GEYE_LEFT), PIXELS_COUNT);
 					break;
 				case GEYE_RIGHT_REQUEST:
-					usb.writeBlock(GridEYEvaluesGet(GEYE_RIGHT), 64);
+					temp=GridEYEvaluesGet(GEYE_RIGHT);
+					for (int i = 0; i < 8; ++i) {
+						temp2[i]=i;
+					}
+					temp3=0x31;
+					usb.writeBlock(temp, 8);
 					break;
 				case CO2_REQUEST:
 					CO2value = CO2valueGet();

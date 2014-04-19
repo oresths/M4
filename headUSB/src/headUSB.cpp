@@ -72,17 +72,33 @@ int main(void) {
 //	while ( (nr=read(fd, bufIN, 64)) == 64 ) {}
 ////	fcntl(fd, F_SETFL, 0);	//make read() blocking
 //	for (r = 0; r < 20; r++) {
-	for (;;) {
-		bufOUT = 4;
-		write(fd, temp_bufOUT, nbytesOUT);
-		usleep(500*1000);
 
-//		cout << "prin" << endl;
-		nr=read(fd, bufIN, 4);	//blocking
+	unsigned char temp2[8];
+	for (int i = 0; i < 8; ++i) {
+		temp2[i]=0x30+i;
+	}
+	unsigned char tmp;
+	for (;;) {
+//		for (int i = 0; i < 8; ++i) {
+//			cout << temp2[i] << endl;
+//		}
+		int bufOUT = 3;
+		write(fd, (const void *)&bufOUT, nbytesOUT);
+		usleep(100*1000);
+		nr=read(fd, bufIN, 8);	//blocking
 		if (nr<0) cout << "Error" << endl;
+		cout << "TPA = ";
+		for (int i = 0; i < 8; ++i) {
+			tmp=bufIN[i];
+			cout << (int)bufIN[i] << endl;
+		}
+
+//		cout << "CO2 = " << *(float *)bufIN  << endl;
+
+		usleep(100*1000);
 
 //		printf("CO2= %f", t2);
-		cout << *(float *)bufIN  << endl;
+
 
 		usleep(500*1000);
 
