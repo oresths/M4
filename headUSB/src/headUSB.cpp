@@ -73,17 +73,18 @@ int main(void) {
 ////	fcntl(fd, F_SETFL, 0);	//make read() blocking
 //	for (r = 0; r < 20; r++) {
 	for (;;) {
-		bufOUT = 0;
+		bufOUT = 4;
 		write(fd, temp_bufOUT, nbytesOUT);
 		usleep(500*1000);
 
 //		cout << "prin" << endl;
-/*		nr=read(fd, bufIN, 4);	//blocking
+		nr=read(fd, bufIN, 4);	//blocking
 		if (nr<0) cout << "Error" << endl;
 
-		printf("%f", bufIN);
+//		printf("CO2= %f", t2);
+		cout << *(float *)bufIN  << endl;
 
-		usleep(500*1000);*/
+		usleep(500*1000);
 
 /*		for (i = 0; i < 20; i++)
 			temp_bufOUT[i] = bufOUT[r * 20 + i];
