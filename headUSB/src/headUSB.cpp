@@ -23,7 +23,7 @@ int main(void) {
 
 	int fd;
 
-//	fd = open("/dev/head", O_RDWR | O_NOCTTY | O_NDELAY);
+//	fd = open("/dev/head", O_RDWR | O_NOCTTY | O_NDELAY);	//to make read non-blocking
 	fd = open("/dev/head", O_RDWR | O_NOCTTY );
 	if (fd == -1) {
 		puts("[Head]: cannot open port");
@@ -112,7 +112,7 @@ int main(void) {
 		if (nr<0) cout << "Error" << endl;
 		cout << "CO2 = " << *(float *)bufIN  << endl;
 
-		usleep(500*1000);
+		usleep(200*1000);
 	}
 
 	close(fd);

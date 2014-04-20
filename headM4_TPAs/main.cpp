@@ -37,6 +37,8 @@ int main (void) {
     temp_sens3.grideye_num = GEYE_RIGHT;
     Thread tGridEYERight(GridEYETask, (void *)&temp_sens3);
 
+    USBInit();
+
     Thread tUSB(USBTask);
 
     wait(1);
@@ -44,7 +46,7 @@ int main (void) {
     //I2C sensors in the same I2C bus have maximum distance ie 50ms in a 100ms loop
     while (true) {
     	tGridEYECenter.signal_set(GRIDEYE_I2C_SIGNAL);
-//    	Thread::wait(100);
+//    	Thread::wait(100);	//DELETE
 
 		Thread::wait(12);
 		CO2Trigger();
@@ -60,6 +62,6 @@ int main (void) {
 
 		Thread::wait(10);
 
-		Thread::wait(1000);
+//		Thread::wait(100);	//DELETE
     }
 }

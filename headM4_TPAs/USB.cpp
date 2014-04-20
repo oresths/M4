@@ -6,9 +6,13 @@
 //bigger than 64 byte.
 //The circular buffer fills up transparently with a callback, so we don't have
 //to worry about missing packets.
-static USBSerial usb(20);
+static USBSerial *usb;
 
 Serial pcu(USBTX, USBRX);
+
+void USBInit() {
+	usb = new USBSerial(20);	//TODO DEBUG
+}
 
 //USBTask could be made as interrupt callback
 void USBTask(const void *args) {
@@ -24,16 +28,16 @@ void USBTask(const void *args) {
 
 	while (true) {
 		Thread::wait(COMMAND_POLLING_TIME);
-		if (usb.readable()) {
-			command = usb._getc();
+		if (usb->readable()) {
+			command = usb->_getc();
 
 			switch (command) {
 				case GEYE_CENTER_REQUEST:
 					temp=GridEYEvaluesGet(GEYE_CENTER);
-					usb.writeBlock(temp, PIXELS_COUNT);
+					usb->writeBlock(temp, PIXELS_COUNT);
 					break;
 				case GEYE_LEFT_REQUEST:
-					usb.writeBlock(GridEYEvaluesGet(GEYE_LEFT), PIXELS_COUNT);
+					usb->writeBlock(GridEYEvaluesGet(GEYE_LEFT), PIXELS_COUNT);
 					break;
 				case GEYE_RIGHT_REQUEST:
 					temp=GridEYEvaluesGet(GEYE_RIGHT);
@@ -41,11 +45,11 @@ void USBTask(const void *args) {
 						temp2[i]=i;
 					}
 					temp3=0x31;
-					usb.writeBlock(temp, 8);
+					usb->writeBlock(temp, 8);
 					break;
 				case CO2_REQUEST:
 					CO2value = CO2valueGet();
-					usb.writeBlock(&CO2value_uint8, 4);
+					usb->writeBlock(&CO2value_uint8, 4);
 					break;
 				default:
 					break;

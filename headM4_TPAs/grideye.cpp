@@ -6,6 +6,9 @@ static uint8_t GridEYECenterValues[PIXELS_COUNT];
 static uint8_t GridEYELeftValues[PIXELS_COUNT];
 static uint8_t GridEYERightValues[PIXELS_COUNT];
 
+static Mutex i2c0_mutex;
+static Mutex i2c1_mutex;
+
 void GridEYEInit(I2C *i2c0_obj, I2C *i2c1_obj) {
 	i2c0_obj->frequency(100000);
 	i2c1_obj->frequency(100000);
@@ -37,27 +40,16 @@ void GridEYETask(void const *args) {
 		pcg.printf("GridEye\r\n");
 
 		cmd[0] = GRIDEYE_I2C_TEMP_ADDR;
+		i2c_lock(grideye_num);
 		int wr= i2c_obj->write(i2c_addr, cmd, 1, true);
 		i2c_obj->read(i2c_addr, temper_values, PIXELS_COUNT, true);
+		i2c_unlock(grideye_num);
 
 		for (int i = 0; i < PIXELS_COUNT; ++i) {
 			pcg.printf("Temp = %d\r\n",(uint8_t)temper_values[i]);
 		}
 
 		GridEYEvaluesSet((uint8_t *)temper_values, grideye_num);
-
-//		switch (grideye_num) {
-//			case 1:
-//				GridEYECenterI2C0valuesSet(temper_values);
-//				break;
-//			case 2:
-//				GridEYELeftI2C0valuesSet(temper_values);
-//				break;
-//			case 3:
-//				GridEYERightI2C1valuesSet(temper_values);
-//				break;
-//		}
-
 
 #if ENABLE_RGB_LEDMATRIX
 		
@@ -138,39 +130,30 @@ uint8_t * GridEYEvaluesGet(uint8_t grideye_num) {
 	return GridEYECenterValues;	//Shouldn't come here
 }
 
+void i2c_lock(uint8_t grideye_num) {
+	switch (grideye_num) {
+		case GEYE_CENTER:
+			i2c0_mutex.lock();
+			break;
+		case GEYE_LEFT:
+			i2c0_mutex.lock();
+			break;
+		case GEYE_RIGHT:
+			i2c1_mutex.lock();
+			break;
+	}
+}
 
-//static void GridEYECenterI2C0valuesSet(float values[]) {
-//	for (int i = 0; i < PIXELS_COUNT; ++i) {
-//		if (values[i] < 0) {
-//			GridEYECenterI2C0values[i] = 0;
-//		} else if (values[i] > 80) {
-//			GridEYECenterI2C0values[i] = 80;
-//		} else {
-//			GridEYECenterI2C0values[i] = (uint8_t)(values[i] + 0.5);	//rounding to nearest Celsius degree
-//		}
-//	}
-//}
-//
-//static void GridEYELeftI2C0valuesSet(float values[]) {
-//	for (int i = 0; i < PIXELS_COUNT; ++i) {
-//		if (values[i] < 0) {
-//			GridEYELeftI2C0values[i] = 0;
-//		} else if (values[i] > 80) {
-//			GridEYELeftI2C0values[i] = 80;
-//		} else {
-//			GridEYELeftI2C0values[i] = (uint8_t)(values[i] + 0.5);	//rounding to nearest Celsius degree
-//		}
-//	}
-//}
-//
-//static void GridEYERightI2C1valuesSet(float values[]) {
-//	for (int i = 0; i < PIXELS_COUNT; ++i) {
-//		if (values[i] < 0) {
-//			GridEYERightI2C1values[i] = 0;
-//		} else if (values[i] > 80) {
-//			GridEYERightI2C1values[i] = 80;
-//		} else {
-//			GridEYERightI2C1values[i] = (uint8_t)(values[i] + 0.5);	//rounding to nearest Celsius degree
-//		}
-//	}
-//}
+void i2c_unlock(uint8_t grideye_num) {
+	switch (grideye_num) {
+		case GEYE_CENTER:
+			i2c0_mutex.unlock();
+			break;
+		case GEYE_LEFT:
+			i2c0_mutex.unlock();
+			break;
+		case GEYE_RIGHT:
+			i2c1_mutex.unlock();
+			break;
+	}
+}
