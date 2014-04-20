@@ -43,26 +43,18 @@ int main(void) {
 	unsigned char *bufIN;
 	bufIN = (unsigned char *) malloc(nbytes * sizeof(char));
 
-	const char *bufOUT;
-	bufOUT = (const char *) malloc(20 * 20 * sizeof(char));
+//	const char *bufOUT;
+//	bufOUT = (const char *) malloc(20 * 20 * sizeof(char));
 
 	unsigned char *temp_bufOUT;
 	temp_bufOUT = (unsigned char *) malloc(20 * sizeof(char));
 
-/*	int dokOUT[20 * 20];
-	for (i = 0; i < 20; i++) {
-		for (j = 0; j < 20; j++) {
-			dokOUT[i * 20 + j] = j + i;
-		}
-	}
-
-	stringstream ss;
+/*	stringstream ss;
 	for (i = 0; i < 20 * 20; i++) {
-		ss << dokOUT[i];
+		ss << i;
 	}
 	bufOUT = ss.str().c_str();*/
 
-	int r;
 	int nr;
 	//Warning: Emptying the buffer maybe could corrupt packet sequence ? ie if we flush in the middle of
 	//incoming data. Needs more testing.
@@ -72,41 +64,55 @@ int main(void) {
 //	while ( (nr=read(fd, bufIN, 64)) == 64 ) {}
 ////	fcntl(fd, F_SETFL, 0);	//make read() blocking
 //	for (r = 0; r < 20; r++) {
-
-	unsigned char temp2[8];
-	for (int i = 0; i < 8; ++i) {
-		temp2[i]=0x30+i;
-	}
-	unsigned char tmp;
+	int bufOUT;
 	for (;;) {
-//		for (int i = 0; i < 8; ++i) {
-//			cout << temp2[i] << endl;
-//		}
-		int bufOUT = 3;
+		bufOUT = 1;
 		write(fd, (const void *)&bufOUT, nbytesOUT);
-		usleep(100*1000);
+//		usleep(1*1000);
 		nr=read(fd, bufIN, 8);	//blocking
 		if (nr<0) cout << "Error" << endl;
-		cout << "TPA = ";
+		cout << "TPA1 = ";
 		for (int i = 0; i < 8; ++i) {
-			tmp=bufIN[i];
-			cout << (int)bufIN[i] << endl;
+			cout << (int)bufIN[i] << " ";
 		}
+		cout << endl;
 
-//		cout << "CO2 = " << *(float *)bufIN  << endl;
+//		usleep(100*1000);
 
-		usleep(100*1000);
+		bufOUT = 2;
+		write(fd, (const void *)&bufOUT, nbytesOUT);
+//		usleep(1*1000);
+		nr=read(fd, bufIN, 8);	//blocking
+		if (nr<0) cout << "Error" << endl;
+		cout << "TPA2 = ";
+		for (int i = 0; i < 8; ++i) {
+			cout << (int)bufIN[i] << " ";
+		}
+		cout << endl;
 
-//		printf("CO2= %f", t2);
+//		usleep(100*1000);
 
+		bufOUT = 3;
+		write(fd, (const void *)&bufOUT, nbytesOUT);
+//		usleep(1*1000);
+		nr=read(fd, bufIN, 8);	//blocking
+		if (nr<0) cout << "Error" << endl;
+		cout << "TPA3 = ";
+		for (int i = 0; i < 8; ++i) {
+			cout << (int)bufIN[i] << " ";
+		}
+		cout << endl;
+
+//		usleep(100*1000);
+
+		bufOUT = 4;
+		write(fd, (const void *)&bufOUT, nbytesOUT);
+//		usleep(1*1000);
+		nr=read(fd, bufIN, 4);	//blocking
+		if (nr<0) cout << "Error" << endl;
+		cout << "CO2 = " << *(float *)bufIN  << endl;
 
 		usleep(500*1000);
-
-/*		for (i = 0; i < 20; i++)
-			temp_bufOUT[i] = bufOUT[r * 20 + i];
-//		cout << temp_bufOUT;
-		write(fd, temp_bufOUT, nbytesOUT);*/
-
 	}
 
 	close(fd);

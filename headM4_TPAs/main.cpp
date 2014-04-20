@@ -23,18 +23,18 @@ int main (void) {
 	i2c_sensor_t temp_sens3;
 
 	temp_sens1.i2c_obj = &i2c0;
-	temp_sens1.i2c_addr = 0xD0;
-//	temp_sens1.grideye_num = GEYE_CENTER;
+	temp_sens1.i2c_addr = 0xD4;
+	temp_sens1.grideye_num = GEYE_CENTER;
     Thread tGridEYECenter(GridEYETask, (void *)&temp_sens1);
 
     temp_sens2.i2c_obj = &i2c0;
-    temp_sens2.i2c_addr = 0xD4;
-//    temp_sens2.grideye_num = GEYE_LEFT;
+    temp_sens2.i2c_addr = 0xD0;
+    temp_sens2.grideye_num = GEYE_LEFT;
     Thread tGridEYELeft(GridEYETask, (void *)&temp_sens2);
 
     temp_sens3.i2c_obj = &i2c1;
     temp_sens3.i2c_addr = 0xD8;
-//    temp_sens3.grideye_num = GEYE_RIGHT;
+    temp_sens3.grideye_num = GEYE_RIGHT;
     Thread tGridEYERight(GridEYETask, (void *)&temp_sens3);
 
     Thread tUSB(USBTask);
@@ -44,6 +44,7 @@ int main (void) {
     //I2C sensors in the same I2C bus have maximum distance ie 50ms in a 100ms loop
     while (true) {
     	tGridEYECenter.signal_set(GRIDEYE_I2C_SIGNAL);
+//    	Thread::wait(100);
 
 		Thread::wait(12);
 		CO2Trigger();
@@ -56,6 +57,8 @@ int main (void) {
 
 		Thread::wait(40);
 		//usb
+
+		Thread::wait(10);
 
 		Thread::wait(1000);
     }
