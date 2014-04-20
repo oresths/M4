@@ -9,7 +9,7 @@
 #include "CO2.hpp"
 #include "grideye.hpp"
 
-#define COMMAND_POLLING_TIME 10	///Time interval to check for incoming commands in milliseconds
+#define COMMAND_POLLING_TIME 10	///Time interval to check for incoming commands in millisecondss
 
 #define GEYE_CENTER_REQUEST 1
 #define GEYE_LEFT_REQUEST 2

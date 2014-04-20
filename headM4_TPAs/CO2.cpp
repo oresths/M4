@@ -168,7 +168,7 @@ void CO2Task(void const *args) {
 			if (ChecksumCalculated != *(uint16_t *)ChecksumReceived || StatusError)
 				CO2SensorError = 1;
 			if (!CO2SensorError) CO2valueSet(GasReading);
-			if (!CO2SensorError) pcc.printf("CO2= %f \r\n", GasReading);
+//			if (!CO2SensorError) pcc.printf("CO2= %f \r\n", GasReading);
 			state = 0;
 			break;
 		}

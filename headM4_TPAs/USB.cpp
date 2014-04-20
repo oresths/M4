@@ -8,7 +8,7 @@
 //to worry about missing packets.
 static USBSerial *usb;
 
-Serial pcu(USBTX, USBRX);
+//Serial pcu(USBTX, USBRX);
 
 void USBInit() {
 	usb = new USBSerial(20);	//TODO DEBUG

@@ -1,6 +1,6 @@
 #include "grideye.hpp"
 
-Serial pcg(USBTX, USBRX);	//TODO delete this , and following printf, or make debug output
+//Serial pcg(USBTX, USBRX);	//TODO delete this , and following printf, or make debug output
 
 static uint8_t GridEYECenterValues[PIXELS_COUNT];
 static uint8_t GridEYELeftValues[PIXELS_COUNT];
@@ -38,7 +38,7 @@ void GridEYETask(void const *args) {
 	while (1) {
 		Thread::signal_wait(GRIDEYE_I2C_SIGNAL);
 
-		pcg.printf("GridEye\r\n");
+//		pcg.printf("GridEye\r\n");
 
 		cmd[0] = GRIDEYE_I2C_TEMP_ADDR;
 		i2c_lock(i2c_periph_num);
@@ -46,9 +46,9 @@ void GridEYETask(void const *args) {
 		i2c_obj->read(i2c_addr, temper_values, PIXELS_COUNT, true);
 		i2c_unlock(i2c_periph_num);
 
-		for (int i = 0; i < PIXELS_COUNT; ++i) {
-			pcg.printf("Temp = %d\r\n",(uint8_t)temper_values[i]);
-		}
+//		for (int i = 0; i < PIXELS_COUNT; ++i) {
+//			pcg.printf("Temp = %d\r\n",(uint8_t)temper_values[i]);
+//		}
 
 		GridEYEvaluesSet((uint8_t *)temper_values, grideye_num);
 

@@ -1,11 +1,3 @@
-//============================================================================
-// Name        : dccc.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -33,83 +25,73 @@ int main(void) {
 	usleep(30000);	//needs some time to initialize, even though it opens succesfully. tcflush() didn't work
 					//without waiting at least 8 ms
 
-	int i, j;
-
-	int nbytes = 4;
+	int CO2nbytes = 4;
+	int TPA81nbytes = 8;
 	int nbytesOUT = 1;
 
-	unsigned char *bufIN;
-	bufIN = (unsigned char *) malloc(nbytes * sizeof(char));
+	union {
+		unsigned char CO2bufIN[4];
+		float CO2bufIN_float;
+	};
 
-//	const char *bufOUT;
-//	bufOUT = (const char *) malloc(20 * 20 * sizeof(char));
+	unsigned char TPAbufIN[8];
 
-	unsigned char *temp_bufOUT;
-	temp_bufOUT = (unsigned char *) malloc(20 * sizeof(char));
-
-/*	stringstream ss;
-	for (i = 0; i < 20 * 20; i++) {
-		ss << i;
-	}
-	bufOUT = ss.str().c_str();*/
+	int bufOUT;
 
 	int nr;
-	//Warning: Emptying the buffer maybe could corrupt packet sequence ? ie if we flush in the middle of
-	//incoming data. Needs more testing.
+//Warning: Emptying the buffer maybe could corrupt packet sequence ? ie if we flush in the middle of
+//incoming data. Needs more testing.
 //	tcflush(fd, TCIFLUSH);	//empties incoming buffer
 
-////	fcntl(fd, F_SETFL, FNDELAY);	//make read() non-blocking
-//	while ( (nr=read(fd, bufIN, 64)) == 64 ) {}
-////	fcntl(fd, F_SETFL, 0);	//make read() blocking
-//	for (r = 0; r < 20; r++) {
-	int bufOUT;
-	cout << endl;
+//	fcntl(fd, F_SETFL, FNDELAY);	//make read() non-blocking
+//	fcntl(fd, F_SETFL, 0);	//make read() blocking
+
+
 	for (;;) {
+		tcflush(fd, TCIFLUSH);
+
 		bufOUT = 1;
-		write(fd, (const void *)&bufOUT, nbytesOUT);
-//		usleep(1*1000);
-		nr=read(fd, bufIN, 8);	//blocking
-		if (nr<0) cout << "Error" << endl;
+		nr = write(fd, (const void *)&bufOUT, nbytesOUT);
+		if (nr!=1) cout << "Write Error" << endl;
+		nr=read(fd, TPAbufIN, TPA81nbytes);	//blocking
+		if (nr<0) cout << "Read Error" << endl;
 		cout << "TPA1 = ";
-		for (int i = 0; i < 8; ++i) {
-			cout << (int)bufIN[i] << " ";
+		for (int i = 0; i < TPA81nbytes; ++i) {
+			cout << (int)TPAbufIN[i] << " ";
 		}
 		cout << endl;
 
-//		usleep(100*1000);
 
 		bufOUT = 2;
-		write(fd, (const void *)&bufOUT, nbytesOUT);
-//		usleep(1*1000);
-		nr=read(fd, bufIN, 8);	//blocking
-		if (nr<0) cout << "Error" << endl;
+		nr = write(fd, (const void *)&bufOUT, nbytesOUT);
+		if (nr!=1) cout << "Write Error" << endl;
+		nr=read(fd, TPAbufIN, TPA81nbytes);	//blocking
+		if (nr<0) cout << "Read Error" << endl;
 		cout << "TPA2 = ";
-		for (int i = 0; i < 8; ++i) {
-			cout << (int)bufIN[i] << " ";
+		for (int i = 0; i < TPA81nbytes; ++i) {
+			cout << (int)TPAbufIN[i] << " ";
 		}
 		cout << endl;
 
-//		usleep(100*1000);
 
 		bufOUT = 3;
-		write(fd, (const void *)&bufOUT, nbytesOUT);
-//		usleep(1*1000);
-		nr=read(fd, bufIN, 8);	//blocking
-		if (nr<0) cout << "Error" << endl;
+		nr = write(fd, (const void *)&bufOUT, nbytesOUT);
+		if (nr!=1) cout << "Write Error" << endl;
+		nr=read(fd, TPAbufIN, TPA81nbytes);	//blocking
+		if (nr<0) cout << "Read Error" << endl;
 		cout << "TPA3 = ";
-		for (int i = 0; i < 8; ++i) {
-			cout << (int)bufIN[i] << " ";
+		for (int i = 0; i < TPA81nbytes; ++i) {
+			cout << (int)TPAbufIN[i] << " ";
 		}
 		cout << endl;
 
-//		usleep(100*1000);
 
 		bufOUT = 4;
-		write(fd, (const void *)&bufOUT, nbytesOUT);
-//		usleep(1*1000);
-		nr=read(fd, bufIN, 4);	//blocking
-		if (nr<0) cout << "Error" << endl;
-		cout << "CO2 = " << *(float *)bufIN  << endl;
+		nr = write(fd, (const void *)&bufOUT, nbytesOUT);
+		if (nr!=1) cout << "Write Error" << endl;
+		nr=read(fd, CO2bufIN, CO2nbytes);	//blocking
+		if (nr<0) cout << "Read Error" << endl;
+		cout << "CO2 = " << CO2bufIN_float << endl;
 
 		usleep(200*1000);
 	}
