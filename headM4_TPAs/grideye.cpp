@@ -19,6 +19,7 @@ void GridEYEInit(I2C *i2c0_obj, I2C *i2c1_obj) {
 void GridEYETask(void const *args) {
 	const i2c_sensor_t *temp=(const i2c_sensor_t *)args;
 	I2C *i2c_obj = temp->i2c_obj;
+	uint8_t i2c_periph_num = temp->i2c_periph_num;
 	uint8_t i2c_addr = temp->i2c_addr;
 	uint8_t grideye_num = temp->grideye_num;
 
@@ -29,7 +30,7 @@ void GridEYETask(void const *args) {
 #if ENABLE_RGB_LEDMATRIX
 
 	DigitalOut SPI_ss(p8);	///Slave Select
-	SPI_ss = 1;	//Make sure the RG matrix is deactivated, maybe this should be first line executed
+	SPI_ss = 1;	//Make sure the RG matrix is deactivated, maybe this should be first line executed.
 	SPI RGB_LEDMatrix(p5, p6, p7); /// mosi, miso, sclk
 
 #endif
@@ -40,10 +41,10 @@ void GridEYETask(void const *args) {
 		pcg.printf("GridEye\r\n");
 
 		cmd[0] = GRIDEYE_I2C_TEMP_ADDR;
-		i2c_lock(grideye_num);
+		i2c_lock(i2c_periph_num);
 		int wr= i2c_obj->write(i2c_addr, cmd, 1, true);
 		i2c_obj->read(i2c_addr, temper_values, PIXELS_COUNT, true);
-		i2c_unlock(grideye_num);
+		i2c_unlock(i2c_periph_num);
 
 		for (int i = 0; i < PIXELS_COUNT; ++i) {
 			pcg.printf("Temp = %d\r\n",(uint8_t)temper_values[i]);
@@ -130,29 +131,23 @@ uint8_t * GridEYEvaluesGet(uint8_t grideye_num) {
 	return GridEYECenterValues;	//Shouldn't come here
 }
 
-void i2c_lock(uint8_t grideye_num) {
-	switch (grideye_num) {
-		case GEYE_CENTER:
+void i2c_lock(uint8_t i2c_periph_num) {
+	switch (i2c_periph_num) {
+		case 0:
 			i2c0_mutex.lock();
 			break;
-		case GEYE_LEFT:
-			i2c0_mutex.lock();
-			break;
-		case GEYE_RIGHT:
+		case 1:
 			i2c1_mutex.lock();
 			break;
 	}
 }
 
-void i2c_unlock(uint8_t grideye_num) {
-	switch (grideye_num) {
-		case GEYE_CENTER:
+void i2c_unlock(uint8_t i2c_periph_num) {
+	switch (i2c_periph_num) {
+		case 0:
 			i2c0_mutex.unlock();
 			break;
-		case GEYE_LEFT:
-			i2c0_mutex.unlock();
-			break;
-		case GEYE_RIGHT:
+		case 1:
 			i2c1_mutex.unlock();
 			break;
 	}

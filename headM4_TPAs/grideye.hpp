@@ -32,6 +32,7 @@
 
 typedef struct {
 	I2C *i2c_obj;
+	uint8_t i2c_periph_num;
 	uint8_t i2c_addr;
 	uint8_t grideye_num;
 }i2c_sensor_t;
@@ -43,7 +44,7 @@ void GridEYETask(void const *args);
 void GridEYEvaluesSet(uint8_t values[], uint8_t grideye_num);
 uint8_t * GridEYEvaluesGet(uint8_t grideye_num);
 
-void i2c_lock(uint8_t grideye_num);
-void i2c_unlock(uint8_t grideye_num);
+void i2c_lock(uint8_t i2c_periph_num);
+void i2c_unlock(uint8_t i2c_periph_num);
 
 #endif /* GRIDEYE_HPP_ */

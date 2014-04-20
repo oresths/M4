@@ -19,8 +19,6 @@
 using namespace std;
 
 int main(void) {
-	puts("!!!Hello World!!!"); /* prints !!!Hello World!!! */
-
 	int fd;
 
 //	fd = open("/dev/head", O_RDWR | O_NOCTTY | O_NDELAY);	//to make read non-blocking
@@ -65,6 +63,7 @@ int main(void) {
 ////	fcntl(fd, F_SETFL, 0);	//make read() blocking
 //	for (r = 0; r < 20; r++) {
 	int bufOUT;
+	cout << endl;
 	for (;;) {
 		bufOUT = 1;
 		write(fd, (const void *)&bufOUT, nbytesOUT);
