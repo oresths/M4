@@ -8,6 +8,11 @@
 #include <iostream>
 #include <termios.h>
 
+//#include <sys/ioctl.h>
+//#include <linux/usbdevice_fs.h>
+
+void reconnectUSB(int fd);
+
 using namespace std;
 
 int main(void) {
@@ -52,7 +57,10 @@ int main(void) {
 
 		bufOUT = 1;
 		nr = write(fd, (const void *)&bufOUT, nbytesOUT);
-		if (nr!=1) cout << "Write Error" << endl;
+		if (nr!=1) {
+			reconnectUSB(fd);
+			continue;
+		}
 		nr=read(fd, TPAbufIN, TPA81nbytes);	//blocking
 		if (nr<0) cout << "Read Error" << endl;
 		cout << "TPA1 = ";
@@ -64,7 +72,10 @@ int main(void) {
 
 		bufOUT = 2;
 		nr = write(fd, (const void *)&bufOUT, nbytesOUT);
-		if (nr!=1) cout << "Write Error" << endl;
+		if (nr!=1) {
+			reconnectUSB(fd);
+			continue;
+		}
 		nr=read(fd, TPAbufIN, TPA81nbytes);	//blocking
 		if (nr<0) cout << "Read Error" << endl;
 		cout << "TPA2 = ";
@@ -76,7 +87,10 @@ int main(void) {
 
 		bufOUT = 3;
 		nr = write(fd, (const void *)&bufOUT, nbytesOUT);
-		if (nr!=1) cout << "Write Error" << endl;
+		if (nr!=1) {
+			reconnectUSB(fd);
+			continue;
+		}
 		nr=read(fd, TPAbufIN, TPA81nbytes);	//blocking
 		if (nr<0) cout << "Read Error" << endl;
 		cout << "TPA3 = ";
@@ -88,7 +102,10 @@ int main(void) {
 
 		bufOUT = 4;
 		nr = write(fd, (const void *)&bufOUT, nbytesOUT);
-		if (nr!=1) cout << "Write Error" << endl;
+		if (nr!=1) {
+			reconnectUSB(fd);
+			continue;
+		}
 		nr=read(fd, CO2bufIN, CO2nbytes);	//blocking
 		if (nr<0) cout << "Read Error" << endl;
 		cout << "CO2 = " << CO2bufIN_float << endl;
@@ -99,4 +116,21 @@ int main(void) {
 	close(fd);
 	cout << "Closed" << endl;
 	return EXIT_SUCCESS;
+}
+
+void reconnectUSB(int fd) {
+	cout << "Write Error" << endl;
+	close(fd);
+	cout << "Closed" << endl;
+	//If usb disconnects and reconnects again 1.5s should be fine, if uC resets 4.5s required.
+	//reconnectUSB() is called until communication is restored.
+	usleep(1500*1000);
+	fd = open("/dev/head", O_RDWR | O_NOCTTY );
+	if (fd == -1) {
+		puts("[Head]: cannot open port");
+		printf("\n open() failed with error [%s]\n", strerror(errno));
+	} else {
+		puts("[Head]: usb port successfully opened\n");
+	}
+	usleep(30000);
 }
