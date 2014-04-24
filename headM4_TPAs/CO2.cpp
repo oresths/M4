@@ -1,7 +1,5 @@
 #include "CO2.hpp"
 
-Serial pcc(USBTX, USBRX);
-
 static Serial2 *co2uart;
 
 /**
@@ -12,14 +10,10 @@ static Serial2 *co2uart;
  */
 static Queue<uint8_t, 19> CO2queue;
 
-static float CO2value;
-
 void CO2valueSet(float value) {
-	CO2value = value;
-}
-
-float CO2valueGet() {
-	return CO2value;
+	if (value>=0 && value<5) {
+		HealthyCO2(value);
+	}
 }
 
 //Both putc and printf() use serial_putc() in serial_api.c. Transmit FIFO size
@@ -38,7 +32,7 @@ void RX_isr() {
 }
 
 void CO2Init(PinName tx, PinName rx) {
-	co2uart = new Serial2(tx, rx);	//TODO DEBUG
+	co2uart = new Serial2(tx, rx);
 	co2uart->baud(38400);	///Baud 38400, 8N1
 	co2uart->attach(&RX_isr, Serial::RxIrq);
 }
@@ -168,7 +162,6 @@ void CO2Task(void const *args) {
 			if (ChecksumCalculated != *(uint16_t *)ChecksumReceived || StatusError)
 				CO2SensorError = 1;
 			if (!CO2SensorError) CO2valueSet(GasReading);
-//			if (!CO2SensorError) pcc.printf("CO2= %f \r\n", GasReading);
 			state = 0;
 			break;
 		}

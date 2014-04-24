@@ -2,10 +2,6 @@
 
 //Serial pcg(USBTX, USBRX);	//TODO delete this , and following printf, or make debug output
 
-static uint8_t GridEYECenterValues[PIXELS_COUNT];
-static uint8_t GridEYELeftValues[PIXELS_COUNT];
-static uint8_t GridEYERightValues[PIXELS_COUNT];
-
 static Mutex i2c0_mutex;
 static Mutex i2c1_mutex;
 
@@ -42,7 +38,7 @@ void GridEYETask(void const *args) {
 
 		cmd[0] = GRIDEYE_I2C_TEMP_ADDR;
 		i2c_lock(i2c_periph_num);
-		int wr= i2c_obj->write(i2c_addr, cmd, 1, true);
+		i2c_obj->write(i2c_addr, cmd, 1, true);
 		i2c_obj->read(i2c_addr, temper_values, PIXELS_COUNT, true);
 		i2c_unlock(i2c_periph_num);
 
@@ -90,46 +86,34 @@ void GridEYETask(void const *args) {
 }
 
 void GridEYEvaluesSet(uint8_t values[], uint8_t grideye_num) {
-	uint8_t *GridEYEvalues;
-	switch (grideye_num) {
-		case GEYE_CENTER:
-			GridEYEvalues = GridEYECenterValues;
-			break;
-		case GEYE_LEFT:
-			GridEYEvalues = GridEYELeftValues;
-			break;
-		case GEYE_RIGHT:
-			GridEYEvalues = GridEYERightValues;
-			break;
-		default:
-			return;
-	}
+	uint8_t GridEYEvalues[PIXELS_COUNT];
+	uint8_t OutOfBounds = 0;
 
 	for (int i = 0; i < PIXELS_COUNT; ++i) {
-		if (values[i] < 0) {
-			GridEYEvalues[i] = 0;
-		} else if (values[i] > 80) {
-			GridEYEvalues[i] = 80;
-		} else {
+		if (values[i] >= 0 && values[i] < 80) {
 			GridEYEvalues[i] = (uint8_t)(values[i] + 0.5);	//rounding to nearest Celsius degree
+		} else {
+			OutOfBounds =1;
+		}
+	}
+
+	if (!OutOfBounds) {
+		switch (grideye_num) {
+			case GEYE_CENTER:
+				HealthyGEyeCenter(GridEYEvalues);
+				break;
+			case GEYE_LEFT:
+				HealthyGEyeLeft(GridEYEvalues);
+				break;
+			case GEYE_RIGHT:
+				HealthyGEyeRight(GridEYEvalues);
+				break;
+			default:
+				return;
 		}
 	}
 }
 
-uint8_t * GridEYEvaluesGet(uint8_t grideye_num) {
-	switch (grideye_num) {
-		case GEYE_CENTER:
-			return GridEYECenterValues;
-			break;
-		case GEYE_LEFT:
-			return GridEYELeftValues;
-			break;
-		case GEYE_RIGHT:
-			return GridEYERightValues;
-			break;
-	}
-	return GridEYECenterValues;	//Shouldn't come here
-}
 
 void i2c_lock(uint8_t i2c_periph_num) {
 	switch (i2c_periph_num) {
