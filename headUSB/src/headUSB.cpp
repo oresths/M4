@@ -67,8 +67,7 @@ int main(void) {
 		nr=read(fd, TPAbufIN, TPA81nbytes);	//blocking
 		if (nr<0) {
 			cout << "Read Error" << endl;
-		}
-		else {
+		} else {
 			cout << "TPA1 = ";
 			for (int i = 0; i < TPA81nbytes; ++i) {
 				cout << (int)TPAbufIN[i] << " ";
@@ -86,8 +85,7 @@ int main(void) {
 		nr=read(fd, TPAbufIN, TPA81nbytes);	//blocking
 		if (nr<0) {
 			cout << "Read Error" << endl;
-		}
-		else {
+		} else {
 			cout << "TPA2 = ";
 			for (int i = 0; i < TPA81nbytes; ++i) {
 				cout << (int)TPAbufIN[i] << " ";
@@ -105,8 +103,7 @@ int main(void) {
 		nr=read(fd, TPAbufIN, TPA81nbytes);	//blocking
 		if (nr<0) {
 			cout << "Read Error" << endl;
-		}
-		else {
+		} else {
 			cout << "TPA3 = ";
 			for (int i = 0; i < TPA81nbytes; ++i) {
 				cout << (int)TPAbufIN[i] << " ";
@@ -124,8 +121,7 @@ int main(void) {
 		nr=read(fd, CO2bufIN, CO2nbytes);	//blocking
 		if (nr<0) {
 			cout << "Read Error" << endl;
-		}
-		else {
+		} else {
 			cout << "CO2 = " << CO2bufIN_float << endl;
 		}
 
