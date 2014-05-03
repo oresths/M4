@@ -11,6 +11,9 @@
 //#include <sys/ioctl.h>
 //#include <linux/usbdevice_fs.h>
 
+#define GRIDEYE_SIZE 64
+#define TPA_SIZE 8
+
 void reconnectUSB(int fd);
 
 using namespace std;
@@ -31,7 +34,7 @@ int main(void) {
 					//without waiting at least 8 ms
 
 	int CO2nbytes = 4;
-	int TPA81nbytes = 8;
+	int TPA81nbytes = GRIDEYE_SIZE;
 	int nbytesOUT = 1;
 
 	union {
@@ -39,7 +42,7 @@ int main(void) {
 		float CO2bufIN_float;
 	};
 
-	unsigned char TPAbufIN[8];
+	unsigned char TPAbufIN[GRIDEYE_SIZE];
 
 	int bufOUT;
 
@@ -62,12 +65,16 @@ int main(void) {
 			continue;
 		}
 		nr=read(fd, TPAbufIN, TPA81nbytes);	//blocking
-		if (nr<0) cout << "Read Error" << endl;
-		cout << "TPA1 = ";
-		for (int i = 0; i < TPA81nbytes; ++i) {
-			cout << (int)TPAbufIN[i] << " ";
+		if (nr<0) {
+			cout << "Read Error" << endl;
 		}
-		cout << endl;
+		else {
+			cout << "TPA1 = ";
+			for (int i = 0; i < TPA81nbytes; ++i) {
+				cout << (int)TPAbufIN[i] << " ";
+			}
+			cout << endl;
+		}
 
 
 		bufOUT = 2;
@@ -77,12 +84,16 @@ int main(void) {
 			continue;
 		}
 		nr=read(fd, TPAbufIN, TPA81nbytes);	//blocking
-		if (nr<0) cout << "Read Error" << endl;
-		cout << "TPA2 = ";
-		for (int i = 0; i < TPA81nbytes; ++i) {
-			cout << (int)TPAbufIN[i] << " ";
+		if (nr<0) {
+			cout << "Read Error" << endl;
 		}
-		cout << endl;
+		else {
+			cout << "TPA2 = ";
+			for (int i = 0; i < TPA81nbytes; ++i) {
+				cout << (int)TPAbufIN[i] << " ";
+			}
+			cout << endl;
+		}
 
 
 		bufOUT = 3;
@@ -92,12 +103,16 @@ int main(void) {
 			continue;
 		}
 		nr=read(fd, TPAbufIN, TPA81nbytes);	//blocking
-		if (nr<0) cout << "Read Error" << endl;
-		cout << "TPA3 = ";
-		for (int i = 0; i < TPA81nbytes; ++i) {
-			cout << (int)TPAbufIN[i] << " ";
+		if (nr<0) {
+			cout << "Read Error" << endl;
 		}
-		cout << endl;
+		else {
+			cout << "TPA3 = ";
+			for (int i = 0; i < TPA81nbytes; ++i) {
+				cout << (int)TPAbufIN[i] << " ";
+			}
+			cout << endl;
+		}
 
 
 		bufOUT = 4;
@@ -107,8 +122,12 @@ int main(void) {
 			continue;
 		}
 		nr=read(fd, CO2bufIN, CO2nbytes);	//blocking
-		if (nr<0) cout << "Read Error" << endl;
-		cout << "CO2 = " << CO2bufIN_float << endl;
+		if (nr<0) {
+			cout << "Read Error" << endl;
+		}
+		else {
+			cout << "CO2 = " << CO2bufIN_float << endl;
+		}
 
 		usleep(200*1000);
 	}
