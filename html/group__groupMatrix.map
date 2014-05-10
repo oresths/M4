@@ -1,9 +1,0 @@
-<map id="structs" name="structs">
-<area shape="rect" id="node1" href="$group__MatrixSub.html" title="Matrix Subtraction" alt="" coords="179,5,307,35"/>
-<area shape="rect" id="node2" href="$group__MatrixMult.html" title="Matrix Multiplication" alt="" coords="173,59,312,88"/>
-<area shape="rect" id="node3" href="$group__MatrixInv.html" title="Matrix Inverse" alt="" coords="191,112,295,141"/>
-<area shape="rect" id="node5" href="$group__MatrixScale.html" title="Matrix Scale" alt="" coords="196,165,289,195"/>
-<area shape="rect" id="node6" href="$group__MatrixAdd.html" title="Matrix Addition" alt="" coords="188,219,297,248"/>
-<area shape="rect" id="node7" href="$group__MatrixTrans.html" title="Matrix Transpose" alt="" coords="181,272,304,301"/>
-<area shape="rect" id="node8" href="$group__MatrixInit.html" title="Matrix Initialization" alt="" coords="177,325,308,355"/>
-</map>

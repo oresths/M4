@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$USBHID_8cpp.html" title="USBDevice/USBHID/USBHID.cpp" alt="" coords="5,83,232,112"/>
-<area shape="rect" id="node5" href="$USBKeyboard_8h.html" title="USBDevice/USBHID/USBKeyboard.h" alt="" coords="256,83,501,112"/>
-<area shape="rect" id="node9" href="$USBMouseKeyboard_8h.html" title="USBDevice/USBHID/USBMouseKeyboard.h" alt="" coords="397,160,680,189"/>
-<area shape="rect" id="node13" href="$USBMouse_8h.html" title="USBDevice/USBHID/USBMouse.h" alt="" coords="576,83,805,112"/>
-<area shape="rect" id="node7" href="$USBKeyboard_8cpp.html" title="USBDevice/USBHID/USBKeyboard.cpp" alt="" coords="115,160,373,189"/>
-<area shape="rect" id="node11" href="$USBMouseKeyboard_8cpp.html" title="USBDevice/USBHID/USBMouseKeyboard.cpp" alt="" coords="389,237,688,267"/>
-<area shape="rect" id="node15" href="$USBMouse_8cpp.html" title="USBDevice/USBHID/USBMouse.cpp" alt="" coords="704,160,947,189"/>
-</map>

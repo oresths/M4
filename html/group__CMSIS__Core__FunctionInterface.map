@@ -1,6 +1,0 @@
-<map id="structs" name="structs">
-<area shape="rect" id="node2" href="$group__CMSIS__core__DebugFunctions.html" title="Functions that access the ITM debug interface." alt="" coords="369,5,476,35"/>
-<area shape="rect" id="node3" href="$group__CMSIS__Core__NVICFunctions.html" title="Functions that manage interrupts and exceptions via the NVIC." alt="" coords="365,59,480,88"/>
-<area shape="rect" id="node4" href="$group__CMSIS__Core__SysTickFunctions.html" title="Functions that configure the System." alt="" coords="357,112,488,141"/>
-<area shape="rect" id="node5" href="$group__CMSIS__Core__RegAccFunctions.html" title="CMSIS Core Register Access Functions" alt="" coords="293,165,552,195"/>
-</map>

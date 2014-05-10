@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$fault__handlers_8c.html" title="fault_handlers.c" alt="" coords="5,83,120,112"/>
-<area shape="rect" id="node5" href="$board_8c.html" title="mbed&#45;src/common/board.c" alt="" coords="144,83,320,112"/>
-<area shape="rect" id="node7" href="$mbed__interface_8c.html" title="mbed&#45;src/common/mbed_interface.c" alt="" coords="344,83,579,112"/>
-<area shape="rect" id="node9" href="$RawSerial_8cpp.html" title="mbed&#45;src/common/RawSerial.cpp" alt="" coords="603,83,821,112"/>
-<area shape="rect" id="node11" href="$Serial_8cpp.html" title="mbed&#45;src/common/Serial.cpp" alt="" coords="845,83,1037,112"/>
-<area shape="rect" id="node13" href="$SerialBase_8cpp.html" title="mbed&#45;src/common/SerialBase.cpp" alt="" coords="1061,83,1283,112"/>
-<area shape="rect" id="node15" href="$wait__api_8c.html" title="mbed&#45;src/common/wait_api.c" alt="" coords="1307,83,1499,112"/>
-</map>

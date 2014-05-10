@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node7" href="$classUSBKeyboard.html" title="USBKeyboard" alt="" coords="5,237,109,267"/>
-<area shape="rect" id="node9" href="$classUSBMouse.html" title="USBMouse" alt="" coords="133,237,221,267"/>
-<area shape="rect" id="node11" href="$classUSBMouseKeyboard.html" title="USBMouseKeyboard" alt="" coords="245,237,389,267"/>
-<area shape="rect" id="node2" href="$classUSBDevice.html" title="USBDevice" alt="" coords="132,83,223,112"/>
-<area shape="rect" id="node4" href="$classUSBHAL.html" title="USBHAL" alt="" coords="140,5,215,35"/>
-</map>

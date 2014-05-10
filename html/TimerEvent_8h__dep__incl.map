@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$Ticker_8h.html" title="mbed&#45;src/api/Ticker.h" alt="" coords="124,83,271,112"/>
-<area shape="rect" id="node9" href="$Ticker_8cpp.html" title="mbed&#45;src/common/Ticker.cpp" alt="" coords="211,160,405,189"/>
-<area shape="rect" id="node12" href="$TimerEvent_8cpp.html" title="mbed&#45;src/common/TimerEvent.cpp" alt="" coords="345,83,572,112"/>
-<area shape="rect" id="node5" href="$Timeout_8h.html" title="mbed&#45;src/api/Timeout.h" alt="" coords="29,160,187,189"/>
-<area shape="rect" id="node7" href="$Timeout_8cpp.html" title="mbed&#45;src/common/Timeout.cpp" alt="" coords="5,237,211,267"/>
-</map>

@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node7" href="$health_8hpp.html" title="Includes, defines and function prototypes used for health monitoring functionality." alt="" coords="295,83,377,112"/>
-<area shape="rect" id="node45" href="$Serial2_8h.html" title="Expands http://mbed.org/handbook/Serial with non&#45;blocking functionality." alt="" coords="721,83,847,112"/>
-<area shape="rect" id="node9" href="$grideye_8hpp.html" title="Includes, defines and function prototypes used for the GridEYE sensor." alt="" coords="201,237,289,267"/>
-<area shape="rect" id="node26" href="$conf_8h.html" title="Configuration file." alt="" coords="359,315,417,344"/>
-<area shape="rect" id="node29" href="$USB_8hpp.html" title="Includes, defines and function prototypes used for USB functionality." alt="" coords="425,160,500,189"/>
-<area shape="rect" id="node13" href="$i2c__nonblocking_8h.html" title="Includes, defines and function prototypes for interrupt based I2C communication implementation." alt="" coords="156,315,335,344"/>
-<area shape="rect" id="node33" href="$USBSerial2_8h.html" title="Slightly modified MBED USBSerial.h. See details." alt="" coords="768,237,923,267"/>
-</map>
