@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$CO2_8hpp.html" title="Includes, defines and function prototypes used for the CO2 sensor." alt="" coords="56,83,131,112"/>
+<area shape="rect" id="node8" href="$main_8cpp.html" title="Initializes and starts tasks." alt="" coords="156,237,231,267"/>
+<area shape="rect" id="node10" href="$grideye_8hpp.html" title="Includes, defines and function prototypes used for the GridEYE sensor." alt="" coords="205,83,293,112"/>
+<area shape="rect" id="node22" href="$health_8cpp.html" title="Implements sensor health monitoring functionality." alt="" coords="317,83,400,112"/>
+<area shape="rect" id="node5" href="$CO2_8cpp.html" title="Implements CO2 sensor functionality." alt="" coords="5,160,80,189"/>
+<area shape="rect" id="node13" href="$USB_8hpp.html" title="Includes, defines and function prototypes used for USB functionality." alt="" coords="368,160,443,189"/>
+<area shape="rect" id="node19" href="$grideye_8cpp.html" title="Implements GridEYE sensor functionality." alt="" coords="256,160,344,189"/>
+<area shape="rect" id="node17" href="$USB_8cpp.html" title="Implements USB communication with the PC." alt="" coords="368,237,443,267"/>
+</map>

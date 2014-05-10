@@ -1,0 +1,8 @@
+<map id="structs" name="structs">
+<area shape="rect" id="node1" href="$group__RealFFT.html" title="RealFFT" alt="" coords="268,5,340,35"/>
+<area shape="rect" id="node2" href="$group__ComplexFFT.html" title="Complex FFT Functions" alt="" coords="223,59,385,88"/>
+<area shape="rect" id="node3" href="$group__Fast.html" title="Real FFT Functions" alt="" coords="235,112,373,141"/>
+<area shape="rect" id="node4" href="$group__CFFT__CIFFT.html" title="Complex FFT Tables" alt="" coords="232,165,376,195"/>
+<area shape="rect" id="node5" href="$group__DCT4__IDCT4.html" title="DCT Type IV Functions" alt="" coords="224,219,384,248"/>
+<area shape="rect" id="node6" href="$group__Radix8__CFFT__CIFFT.html" title="Radix&#45;8 Complex FFT Functions" alt="" coords="199,272,409,301"/>
+</map>

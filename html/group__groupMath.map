@@ -1,0 +1,11 @@
+<map id="structs" name="structs">
+<area shape="rect" id="node1" href="$group__BasicAbs.html" title="Vector Absolute Value" alt="" coords="203,5,355,35"/>
+<area shape="rect" id="node2" href="$group__BasicAdd.html" title="Vector Addition" alt="" coords="224,59,333,88"/>
+<area shape="rect" id="node3" href="$group__BasicMult.html" title="Vector Multiplication" alt="" coords="209,112,348,141"/>
+<area shape="rect" id="node4" href="$group__negate.html" title="Vector Negate" alt="" coords="225,165,332,195"/>
+<area shape="rect" id="node6" href="$group__scale.html" title="Vector Scale" alt="" coords="231,219,327,248"/>
+<area shape="rect" id="node7" href="$group__offset.html" title="Vector Offset" alt="" coords="229,272,328,301"/>
+<area shape="rect" id="node8" href="$group__dot__prod.html" title="Vector Dot Product" alt="" coords="212,325,345,355"/>
+<area shape="rect" id="node9" href="$group__BasicSub.html" title="Vector Subtraction" alt="" coords="213,379,344,408"/>
+<area shape="rect" id="node10" href="$group__shift.html" title="Vector Shift" alt="" coords="233,432,324,461"/>
+</map>

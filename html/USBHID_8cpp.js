@@ -1,0 +1,6 @@
+var USBHID_8cpp =
+[
+    [ "DEFAULT_CONFIGURATION", "USBHID_8cpp.html#a831bf9154a2926c354da7542fbabd996", null ],
+    [ "DEFAULT_CONFIGURATION", "USBHID_8cpp.html#a831bf9154a2926c354da7542fbabd996", null ],
+    [ "TOTAL_DESCRIPTOR_LENGTH", "USBHID_8cpp.html#a213c44124abd14475770ed7b5085cefe", null ]
+];

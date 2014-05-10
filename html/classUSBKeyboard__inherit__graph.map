@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classUSBHID.html" title="USBHID" alt="" coords="17,160,92,189"/>
+<area shape="rect" id="node4" href="$classUSBDevice.html" title="USBDevice" alt="" coords="5,83,96,112"/>
+<area shape="rect" id="node6" href="$classUSBHAL.html" title="USBHAL" alt="" coords="13,5,88,35"/>
+<area shape="rect" id="node8" href="$classmbed_1_1Stream.html" title="mbed::Stream" alt="" coords="119,160,223,189"/>
+<area shape="rect" id="node10" href="$classmbed_1_1FileLike.html" title="mbed::FileLike" alt="" coords="120,83,227,112"/>
+<area shape="rect" id="node12" href="$classmbed_1_1FileHandle.html" title="mbed::FileHandle" alt="" coords="112,5,235,35"/>
+<area shape="rect" id="node14" href="$classmbed_1_1FileBase.html" title="mbed::FileBase" alt="" coords="259,5,371,35"/>
+</map>

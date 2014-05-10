@@ -1,0 +1,33 @@
+<map id="G" name="G">
+<area shape="rect" id="node5" href="$USBMouseKeyboard_8h.html" title="USBMouseKeyboard.h" alt="" coords="325,83,480,112"/>
+<area shape="rect" id="node7" href="$USBMouse_8h.html" title="USBMouse.h" alt="" coords="172,160,271,189"/>
+<area shape="rect" id="node9" href="$USBHID_8h.html" title="USBHID.h" alt="" coords="189,237,275,267"/>
+<area shape="rect" id="node80" href="$USBKeyboard_8h.html" title="USBKeyboard.h" alt="" coords="345,160,460,189"/>
+<area shape="rect" id="node83" href="$Stream_8h.html" title="Stream.h" alt="" coords="449,237,524,267"/>
+<area shape="rect" id="node11" href="$USBEndpoints_8h.html" title="USBEndpoints.h" alt="" coords="43,469,160,499"/>
+<area shape="rect" id="node13" href="$USBDescriptor_8h.html" title="USBDescriptor.h" alt="" coords="309,315,429,344"/>
+<area shape="rect" id="node15" href="$USBDevice__Types_8h.html" title="USBDevice_Types.h" alt="" coords="285,392,429,421"/>
+<area shape="rect" id="node17" href="$USBHID__Types_8h.html" title="USBHID_Types.h" alt="" coords="29,701,157,731"/>
+<area shape="rect" id="node20" href="$USBDevice_8h.html" title="USBDevice.h" alt="" coords="133,315,235,344"/>
+<area shape="rect" id="node22" href="$mbed_8h.html" title="mbed.h" alt="" coords="293,469,357,499"/>
+<area shape="rect" id="node74" href="$USBHAL_8h.html" title="USBHAL.h" alt="" coords="125,392,211,421"/>
+<area shape="rect" id="node24" href="$platform_8h.html" title="platform.h" alt="" coords="471,547,551,576"/>
+<area shape="rect" id="node71" href="$error_8h.html" title="error.h" alt="" coords="296,547,355,576"/>
+<area shape="rect" id="node26" href="$device_8h.html" title="device.h" alt="" coords="689,624,759,653"/>
+<area shape="rect" id="node49" href="$PeripheralNames_8h.html" title="PeripheralNames.h" alt="" coords="379,779,512,808"/>
+<area shape="rect" id="node52" href="$PinNames_8h.html" title="PinNames.h" alt="" coords="832,779,925,808"/>
+<area shape="rect" id="node28" href="$objects_8h.html" title="objects.h" alt="" coords="621,701,696,731"/>
+<area shape="rect" id="node30" href="$cmsis_8h.html" title="cmsis.h" alt="" coords="787,856,853,885"/>
+<area shape="rect" id="node47" href="$PortNames_8h.html" title="PortNames.h" alt="" coords="587,779,685,808"/>
+<area shape="rect" id="node55" href="$gpio__object_8h.html" title="gpio_object.h" alt="" coords="709,779,808,808"/>
+<area shape="rect" id="node32" href="$LPC407x__8x__177x__8x_8h.html" title="CMSIS Cortex&#45;M4 Cortex&#45;M3 Peripheral Access Layer Header File for NXP LPC407x_8x_177x_8x." alt="" coords="681,933,844,963"/>
+<area shape="rect" id="node44" href="$cmsis__nvic_8h.html" title="cmsis_nvic.h" alt="" coords="868,933,967,963"/>
+<area shape="rect" id="node34" href="$core__cm3_8h.html" title="CMSIS Cortex&#45;M3 Core Peripheral Access Layer Header File." alt="" coords="1041,1011,1132,1040"/>
+<area shape="rect" id="node41" href="$system__LPC407x__8x__177x__8x_8h.html" title="CMSIS Cortex&#45;M3 Device Peripheral Access Layer Source File for the NXP LPC Device Series..." alt="" coords="691,1011,904,1040"/>
+<area shape="rect" id="node37" href="$core__cmInstr_8h.html" title="CMSIS Cortex&#45;M Core Instruction Access Header File." alt="" coords="1061,1088,1171,1117"/>
+<area shape="rect" id="node39" href="$core__cmFunc_8h.html" title="CMSIS Cortex&#45;M Core Function Access Header File." alt="" coords="925,1088,1037,1117"/>
+<area shape="rect" id="node78" href="$toolchain_8h.html" title="toolchain.h" alt="" coords="184,469,269,499"/>
+<area shape="rect" id="node86" href="$FileLike_8h.html" title="FileLike.h" alt="" coords="672,315,749,344"/>
+<area shape="rect" id="node88" href="$FileBase_8h.html" title="FileBase.h" alt="" coords="669,392,752,421"/>
+<area shape="rect" id="node99" href="$FileHandle_8h.html" title="FileHandle.h" alt="" coords="776,392,869,421"/>
+</map>

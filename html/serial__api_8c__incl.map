@@ -1,0 +1,18 @@
+<map id="G" name="G">
+<area shape="rect" id="node9" href="$serial__api_8h.html" title="serial_api.h" alt="" coords="368,83,456,112"/>
+<area shape="rect" id="node15" href="$cmsis_8h.html" title="cmsis.h" alt="" coords="521,392,588,421"/>
+<area shape="rect" id="node44" href="$pinmap_8h.html" title="pinmap.h" alt="" coords="321,160,396,189"/>
+<area shape="rect" id="node47" href="$error_8h.html" title="error.h" alt="" coords="480,83,539,112"/>
+<area shape="rect" id="node11" href="$device_8h.html" title="device.h" alt="" coords="496,160,565,189"/>
+<area shape="rect" id="node13" href="$objects_8h.html" title="objects.h" alt="" coords="508,237,583,267"/>
+<area shape="rect" id="node33" href="$PortNames_8h.html" title="PortNames.h" alt="" coords="557,315,656,344"/>
+<area shape="rect" id="node35" href="$PeripheralNames_8h.html" title="PeripheralNames.h" alt="" coords="680,315,813,344"/>
+<area shape="rect" id="node38" href="$PinNames_8h.html" title="PinNames.h" alt="" coords="317,315,411,344"/>
+<area shape="rect" id="node41" href="$gpio__object_8h.html" title="gpio_object.h" alt="" coords="435,315,533,344"/>
+<area shape="rect" id="node17" href="$LPC407x__8x__177x__8x_8h.html" title="CMSIS Cortex&#45;M4 Cortex&#45;M3 Peripheral Access Layer Header File for NXP LPC407x_8x_177x_8x." alt="" coords="319,469,481,499"/>
+<area shape="rect" id="node30" href="$cmsis__nvic_8h.html" title="cmsis_nvic.h" alt="" coords="505,469,604,499"/>
+<area shape="rect" id="node19" href="$core__cm3_8h.html" title="CMSIS Cortex&#45;M3 Core Peripheral Access Layer Header File." alt="" coords="443,547,533,576"/>
+<area shape="rect" id="node27" href="$system__LPC407x__8x__177x__8x_8h.html" title="CMSIS Cortex&#45;M3 Device Peripheral Access Layer Source File for the NXP LPC Device Series..." alt="" coords="205,547,419,576"/>
+<area shape="rect" id="node23" href="$core__cmInstr_8h.html" title="CMSIS Cortex&#45;M Core Instruction Access Header File." alt="" coords="552,624,661,653"/>
+<area shape="rect" id="node25" href="$core__cmFunc_8h.html" title="CMSIS Cortex&#45;M Core Function Access Header File." alt="" coords="416,624,528,653"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="structs" name="structs">
+<area shape="rect" id="node1" href="$group__CmplxByRealMult.html" title="Complex&#45;by&#45;Real Multiplication" alt="" coords="235,5,437,35"/>
+<area shape="rect" id="node2" href="$group__CmplxByCmplxMult.html" title="Complex&#45;by&#45;Complex Multiplication" alt="" coords="223,59,449,88"/>
+<area shape="rect" id="node4" href="$group__cmplx__conj.html" title="Complex Conjugate" alt="" coords="268,112,404,141"/>
+<area shape="rect" id="node5" href="$group__cmplx__mag.html" title="Complex Magnitude" alt="" coords="267,165,405,195"/>
+<area shape="rect" id="node6" href="$group__cmplx__mag__squared.html" title="Complex Magnitude Squared" alt="" coords="241,219,431,248"/>
+<area shape="rect" id="node7" href="$group__cmplx__dot__prod.html" title="Complex Dot Product" alt="" coords="263,272,409,301"/>
+</map>

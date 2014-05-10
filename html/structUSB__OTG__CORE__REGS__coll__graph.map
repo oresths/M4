@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$structUSB__OTG__DREGS.html" title="USB_OTG_DREGS" alt="" coords="24,5,163,35"/>
+<area shape="rect" id="node4" href="$structUSB__OTG__GREGS.html" title="USB_OTG_GREGS" alt="" coords="24,59,163,88"/>
+<area shape="rect" id="node6" href="$structUSB__OTG__HREGS.html" title="USB_OTG_HREGS" alt="" coords="24,112,163,141"/>
+<area shape="rect" id="node8" href="$structUSB__OTG__INEPREGS.html" title="USB_OTG_INEPREGS" alt="" coords="12,165,175,195"/>
+<area shape="rect" id="node10" href="$structUSB__OTG__HC__REGS.html" title="USB_OTG_HC_REGS" alt="" coords="15,219,172,248"/>
+<area shape="rect" id="node12" href="$structUSB__OTG__OUTEPREGS.html" title="USB_OTG_OUTEPREGS" alt="" coords="5,272,181,301"/>
+</map>

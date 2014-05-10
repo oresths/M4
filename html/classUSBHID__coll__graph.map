@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classUSBDevice.html" title="USBDevice" alt="" coords="219,197,309,227"/>
+<area shape="rect" id="node4" href="$classUSBHAL.html" title="USBHAL" alt="" coords="5,101,80,131"/>
+<area shape="rect" id="node7" href="$structCONTROL__TRANSFER.html" title="CONTROL_TRANSFER" alt="" coords="181,101,347,131"/>
+<area shape="rect" id="node9" href="$structSETUP__PACKET.html" title="SETUP_PACKET" alt="" coords="200,5,328,35"/>
+<area shape="rect" id="node11" href="$structUSB__DEVICE.html" title="USB_DEVICE" alt="" coords="371,101,477,131"/>
+<area shape="rect" id="node13" href="$structHID__REPORT.html" title="HID_REPORT" alt="" coords="333,197,443,227"/>
+</map>

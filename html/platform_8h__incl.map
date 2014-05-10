@@ -1,0 +1,15 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$device_8h.html" title="device.h" alt="" coords="261,83,331,112"/>
+<area shape="rect" id="node27" href="$PeripheralNames_8h.html" title="PeripheralNames.h" alt="" coords="419,237,552,267"/>
+<area shape="rect" id="node30" href="$PinNames_8h.html" title="PinNames.h" alt="" coords="5,237,99,267"/>
+<area shape="rect" id="node5" href="$objects_8h.html" title="objects.h" alt="" coords="257,160,332,189"/>
+<area shape="rect" id="node7" href="$cmsis_8h.html" title="cmsis.h" alt="" coords="348,315,415,344"/>
+<area shape="rect" id="node25" href="$PortNames_8h.html" title="PortNames.h" alt="" coords="245,237,344,267"/>
+<area shape="rect" id="node33" href="$gpio__object_8h.html" title="gpio_object.h" alt="" coords="123,237,221,267"/>
+<area shape="rect" id="node9" href="$LPC407x__8x__177x__8x_8h.html" title="CMSIS Cortex&#45;M4 Cortex&#45;M3 Peripheral Access Layer Header File for NXP LPC407x_8x_177x_8x." alt="" coords="145,392,308,421"/>
+<area shape="rect" id="node22" href="$cmsis__nvic_8h.html" title="cmsis_nvic.h" alt="" coords="332,392,431,421"/>
+<area shape="rect" id="node11" href="$core__cm3_8h.html" title="CMSIS Cortex&#45;M3 Core Peripheral Access Layer Header File." alt="" coords="269,469,360,499"/>
+<area shape="rect" id="node19" href="$system__LPC407x__8x__177x__8x_8h.html" title="CMSIS Cortex&#45;M3 Device Peripheral Access Layer Source File for the NXP LPC Device Series..." alt="" coords="32,469,245,499"/>
+<area shape="rect" id="node15" href="$core__cmInstr_8h.html" title="CMSIS Cortex&#45;M Core Instruction Access Header File." alt="" coords="379,547,488,576"/>
+<area shape="rect" id="node17" href="$core__cmFunc_8h.html" title="CMSIS Cortex&#45;M Core Function Access Header File." alt="" coords="243,547,355,576"/>
+</map>

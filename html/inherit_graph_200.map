@@ -1,0 +1,23 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$classmbed_1_1FileBase.html" title="mbed::FileBase" alt="" coords="12,299,124,328"/>
+<area shape="rect" id="node3" href="$classmbed_1_1FileLike.html" title="mbed::FileLike" alt="" coords="201,312,308,341"/>
+<area shape="rect" id="node13" href="$classmbed_1_1FileSystemLike.html" title="mbed::FileSystemLike" alt="" coords="179,59,331,88"/>
+<area shape="rect" id="node5" href="$classmbed_1_1Stream.html" title="mbed::Stream" alt="" coords="387,325,491,355"/>
+<area shape="rect" id="node7" href="$classUSBKeyboard.html" title="USBKeyboard" alt="" coords="567,272,671,301"/>
+<area shape="rect" id="node9" href="$classUSBMouseKeyboard.html" title="USBMouseKeyboard" alt="" coords="547,325,691,355"/>
+<area shape="rect" id="node11" href="$classUSBSerial.html" title="USBSerial" alt="" coords="577,379,660,408"/>
+<area shape="rect" id="node15" href="$classFATFileSystem.html" title="FATFileSystem" alt="" coords="383,5,495,35"/>
+<area shape="rect" id="node19" href="$classQSPIFileSystem.html" title="QSPIFileSystem" alt="" coords="379,59,499,88"/>
+<area shape="rect" id="node17" href="$classMCIFileSystem.html" title="MCIFileSystem" alt="" coords="563,5,675,35"/>
+<area shape="rect" id="node20" href="$classmbed_1_1FileHandle.html" title="mbed::FileHandle" alt="" coords="7,365,129,395"/>
+<area shape="rect" id="node22" href="$classFATFileHandle.html" title="FATFileHandle" alt="" coords="200,365,309,395"/>
+<area shape="rect" id="node25" href="$classQSPIFileHandle.html" title="QSPIFileHandle" alt="" coords="197,419,312,448"/>
+<area shape="rect" id="node26" href="$classUSBHAL.html" title="USBHAL" alt="" coords="31,219,105,248"/>
+<area shape="rect" id="node28" href="$classUSBDevice.html" title="USBDevice" alt="" coords="209,219,300,248"/>
+<area shape="rect" id="node30" href="$classUSBAudio.html" title="USBAudio" alt="" coords="397,165,480,195"/>
+<area shape="rect" id="node32" href="$classUSBCDC.html" title="USBCDC" alt="" coords="399,379,479,408"/>
+<area shape="rect" id="node35" href="$classUSBHID.html" title="USBHID" alt="" coords="401,219,476,248"/>
+<area shape="rect" id="node41" href="$classUSBMIDI.html" title="USBMIDI" alt="" coords="400,272,477,301"/>
+<area shape="rect" id="node43" href="$classUSBMSD.html" title="USBMSD" alt="" coords="399,112,479,141"/>
+<area shape="rect" id="node38" href="$classUSBMouse.html" title="USBMouse" alt="" coords="575,219,663,248"/>
+</map>

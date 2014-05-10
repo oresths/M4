@@ -1,0 +1,25 @@
+var structSPIFIobj =
+[
+    [ "base", "structSPIFIobj.html#ab1e87b28c1d08b9aa7de58048c28dccc", null ],
+    [ "busy", "structSPIFIobj.html#a96efb9dc5d25a33590e9691f6397252b", null ],
+    [ "devID", "structSPIFIobj.html#aba4b0ce3a93b7a042984ebb0483745aa", null ],
+    [ "devSize", "structSPIFIobj.html#a5891ea54b8ac0d74b998308388e21c25", null ],
+    [ "devType", "structSPIFIobj.html#acd203c3170f8d62c9279f3dc881c6b3b", null ],
+    [ "erase_ops", "structSPIFIobj.html#acadb7f70e857c56233d543d90b2ae8fe", null ],
+    [ "erase_shifts", "structSPIFIobj.html#a057b93717ec513f29e87381d32a99d30", null ],
+    [ "errCheck", "structSPIFIobj.html#a077a455e6d2b126e389c0c2b303dc646", null ],
+    [ "mem_cmd", "structSPIFIobj.html#a6ec9336cf2ad221c2bcb94a217e918fb", null ],
+    [ "memSize", "structSPIFIobj.html#a530d384ed11721524c2baf3063d1501c", null ],
+    [ "mfger", "structSPIFIobj.html#a375f00d3b02d7dcd9edc1a508d81cca6", null ],
+    [ "opts", "structSPIFIobj.html#a152517b1d1d11fa08a94f78cf15f7b50", null ],
+    [ "prog_cmd", "structSPIFIobj.html#ae4da550829c5d5b8fd16620ca24da8a5", null ],
+    [ "prot", "structSPIFIobj.html#a589ee8485d7991379e336e4854289a8a", null ],
+    [ "protBytes", "structSPIFIobj.html#ae7ff4a5aaa612ab5792e80a75dccd504", null ],
+    [ "protEnts", "structSPIFIobj.html#ae1a9bcf12d06b1a5d3202b387e54d65e", null ],
+    [ "regbase", "structSPIFIobj.html#abee1ea91bcf8aa8799fab5d59da24ae7", null ],
+    [ "reserved", "structSPIFIobj.html#a057c7ac3ac8af9973c55f7a8b7775aa1", null ],
+    [ "sectors", "structSPIFIobj.html#a705a169ddb3d6dadd652c79ad20fde8e", null ],
+    [ "set_prot", "structSPIFIobj.html#a9e6dcca56338c61b1ccbd389838076a9", null ],
+    [ "stat", "structSPIFIobj.html#a4323b2b6b2e6361b3dda86e086071bc8", null ],
+    [ "write_prot", "structSPIFIobj.html#af5fa8d85ee9135226d57de361f201355", null ]
+];

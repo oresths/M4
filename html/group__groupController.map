@@ -1,0 +1,8 @@
+<map id="structs" name="structs">
+<area shape="rect" id="node1" href="$group__inv__clarke.html" title="Vector Inverse Clarke Transform" alt="" coords="193,5,404,35"/>
+<area shape="rect" id="node3" href="$group__park.html" title="Vector Park Transform" alt="" coords="221,59,376,88"/>
+<area shape="rect" id="node4" href="$group__clarke.html" title="Vector Clarke Transform" alt="" coords="216,112,381,141"/>
+<area shape="rect" id="node5" href="$group__PID.html" title="PID Motor Control" alt="" coords="235,165,363,195"/>
+<area shape="rect" id="node6" href="$group__inv__park.html" title="Vector Inverse Park transform" alt="" coords="200,219,397,248"/>
+<area shape="rect" id="node7" href="$group__SinCos.html" title="Sine Cosine" alt="" coords="252,272,345,301"/>
+</map>

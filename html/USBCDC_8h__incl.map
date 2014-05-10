@@ -1,0 +1,24 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$USBEndpoints_8h.html" title="USBEndpoints.h" alt="" coords="224,237,341,267"/>
+<area shape="rect" id="node5" href="$USBDescriptor_8h.html" title="USBDescriptor.h" alt="" coords="251,83,371,112"/>
+<area shape="rect" id="node7" href="$USBDevice__Types_8h.html" title="USBDevice_Types.h" alt="" coords="285,160,429,189"/>
+<area shape="rect" id="node9" href="$USBDevice_8h.html" title="USBDevice.h" alt="" coords="445,83,547,112"/>
+<area shape="rect" id="node11" href="$mbed_8h.html" title="mbed.h" alt="" coords="544,237,608,267"/>
+<area shape="rect" id="node64" href="$USBHAL_8h.html" title="USBHAL.h" alt="" coords="453,160,539,189"/>
+<area shape="rect" id="node13" href="$platform_8h.html" title="platform.h" alt="" coords="399,315,479,344"/>
+<area shape="rect" id="node61" href="$error_8h.html" title="error.h" alt="" coords="671,315,729,344"/>
+<area shape="rect" id="node15" href="$device_8h.html" title="device.h" alt="" coords="261,392,331,421"/>
+<area shape="rect" id="node39" href="$PeripheralNames_8h.html" title="PeripheralNames.h" alt="" coords="419,547,552,576"/>
+<area shape="rect" id="node42" href="$PinNames_8h.html" title="PinNames.h" alt="" coords="5,547,99,576"/>
+<area shape="rect" id="node17" href="$objects_8h.html" title="objects.h" alt="" coords="257,469,332,499"/>
+<area shape="rect" id="node19" href="$cmsis_8h.html" title="cmsis.h" alt="" coords="348,624,415,653"/>
+<area shape="rect" id="node37" href="$PortNames_8h.html" title="PortNames.h" alt="" coords="245,547,344,576"/>
+<area shape="rect" id="node45" href="$gpio__object_8h.html" title="gpio_object.h" alt="" coords="123,547,221,576"/>
+<area shape="rect" id="node21" href="$LPC407x__8x__177x__8x_8h.html" title="CMSIS Cortex&#45;M4 Cortex&#45;M3 Peripheral Access Layer Header File for NXP LPC407x_8x_177x_8x." alt="" coords="145,701,308,731"/>
+<area shape="rect" id="node34" href="$cmsis__nvic_8h.html" title="cmsis_nvic.h" alt="" coords="332,701,431,731"/>
+<area shape="rect" id="node23" href="$core__cm3_8h.html" title="CMSIS Cortex&#45;M3 Core Peripheral Access Layer Header File." alt="" coords="269,779,360,808"/>
+<area shape="rect" id="node31" href="$system__LPC407x__8x__177x__8x_8h.html" title="CMSIS Cortex&#45;M3 Device Peripheral Access Layer Source File for the NXP LPC Device Series..." alt="" coords="32,779,245,808"/>
+<area shape="rect" id="node27" href="$core__cmInstr_8h.html" title="CMSIS Cortex&#45;M Core Instruction Access Header File." alt="" coords="379,856,488,885"/>
+<area shape="rect" id="node29" href="$core__cmFunc_8h.html" title="CMSIS Cortex&#45;M Core Function Access Header File." alt="" coords="243,856,355,885"/>
+<area shape="rect" id="node68" href="$toolchain_8h.html" title="toolchain.h" alt="" coords="435,237,520,267"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$exit_8c.html" title="mbed&#45;src/common/exit.c" alt="" coords="5,83,171,112"/>
+<area shape="rect" id="node5" href="$mbed__interface_8c.html" title="mbed&#45;src/common/mbed_interface.c" alt="" coords="195,83,429,112"/>
+<area shape="rect" id="node7" href="$semihost__api_8c.html" title="mbed&#45;src/common/semihost_api.c" alt="" coords="453,83,675,112"/>
+</map>
