@@ -19,7 +19,7 @@ int main(void) {
 	int fd;
 
 //	fd = open("/dev/head", O_RDWR | O_NOCTTY | O_NDELAY);	//to make read non-blocking
-	fd = open("/dev/head", O_RDWR | O_NOCTTY );
+	fd = open("/dev/ttyACM0", O_RDWR | O_NOCTTY );
 	if (fd == -1) {
 		puts("[Head]: cannot open port");
 		printf("\n open() failed with error [%s]\n", strerror(errno));
@@ -30,8 +30,26 @@ int main(void) {
 	usleep(30000);	//needs some time to initialize, even though it opens succesfully. tcflush() didn't work
 					//without waiting at least 8 ms
 
+	//To save time you can see and change terminal settings in command line with stty command,
+	//before implementing in software. stty prefixes disabled flags with a dash.
+	//See also http://man7.org/linux/man-pages/man3/termios.3.html
+	struct termios tio;
+
+    if (tcgetattr(fd, &tio) < 0) {
+        perror("init_serialport: Couldn't get term attributes");
+        return -1;
+    }
+
+    tio.c_lflag &= ~(ICANON | ISIG);
+
+    if( tcsetattr(fd, TCSANOW, &tio) < 0) {
+        perror("init_serialport: Couldn't set term attributes");
+        return -1;
+    }
+
+
 	int CO2nbytes = 4;
-	int TPA81nbytes = 8;
+	int TPA81nbytes = 8*8;
 	int nbytesOUT = 1;
 
 	union {
@@ -39,7 +57,7 @@ int main(void) {
 		float CO2bufIN_float;
 	};
 
-	unsigned char TPAbufIN[8];
+	unsigned char TPAbufIN[8*8];
 
 	int bufOUT;
 
@@ -110,7 +128,7 @@ int main(void) {
 		if (nr<0) cout << "Read Error" << endl;
 		cout << "CO2 = " << CO2bufIN_float << endl;
 
-		usleep(200*1000);
+		usleep(100*1000);
 	}
 
 	close(fd);
